@@ -37,7 +37,8 @@ class SailInstallCommand extends Command
      */
     public function handle()
     {
-        copy(base_path('vendor/laravel/sail/stubs/docker-compose.yml'), base_path('docker-compose.yml'));
+	copy(base_path('vendor/laravel/sail/stubs/docker-compose.yml'), base_path('docker-compose.yml'));
+	copy(__DIR__ . '/../../../stubs/server.php', base_path('server.php'));
 
         $environment = file_get_contents(base_path('.env'));
 
