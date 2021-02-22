@@ -1,0 +1,29 @@
+{
+    "name": "mahdiraad/lumen-sail",
+    "description": "Installing Laravel Sail Package in Lumen",
+    "license": "MIT",
+    "support": {
+        "source": "https://github.com/mahdiraad/lumen-sail"
+    },
+    "authors": [
+        {
+            "name": "Mahdi M. Raad",
+            "email": "mahdiraad@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/sail": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "mahdiraad\\LumenSail\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "mahdiraad\\LumenSail\\LumenSailServiceProvider"
+            ]
+        }
+    }
+}
