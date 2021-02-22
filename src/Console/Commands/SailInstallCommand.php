@@ -45,6 +45,19 @@ class SailInstallCommand extends Command
         $environment = str_replace('MEMCACHED_HOST=127.0.0.1', 'MEMCACHED_HOST=memcached', $environment);
         $environment = str_replace('REDIS_HOST=127.0.0.1', 'REDIS_HOST=redis', $environment);
 
+        $extraEnvironments = [
+            "#WWWGROUP=",
+            "#WWWUSER=",
+            "#APP_PORT=",
+            "#FORWARD_DB_PORT=",
+            "#FORWARD_REDIS_PORT=",
+            "#FORWARD_MAILHOG_PORT=",
+            "#FORWARD_MAILHOG_DASHBOARD_PORT=",
+        ];
+        
+        $environment .= "\n". implode("\n", $extraEnvironments);
+
         file_put_contents(base_path('.env'), $environment);
     }
 }
+
