@@ -21,6 +21,7 @@ class LumenSailServiceProvider extends ServiceProvider
      */
     protected $commands = [
         'SailInstall' => 'command.sail.install',
+        'Serve' => 'command.serve',
     ];
 
     /**
@@ -54,6 +55,16 @@ class LumenSailServiceProvider extends ServiceProvider
     {
         $this->app->singleton('command.sail.install', function ($app) {
             return new Console\Commands\SailInstallCommand();
+        });
+    }
+
+    /**
+     * Register the command.
+     */
+    protected function registerServeCommand()
+    {
+        $this->app->singleton('command.serve', function ($app) {
+            return new Console\Commands\ServeCommand();
         });
     }
 
