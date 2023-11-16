@@ -1,6 +1,6 @@
 <?php
 
-namespace mahdiraad\LumenSail;
+namespace Histel\LumenSail;
 
 use Illuminate\Support\Composer;
 use Illuminate\Support\ServiceProvider;
