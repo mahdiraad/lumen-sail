@@ -39,6 +39,8 @@ class SailInstallCommand extends Command
         $this->replaceEnvVariables($services);
 
         $this->info('Sail scaffolding installed successfully.');
+
+        copy(__DIR__ . '/../../../stubs/server.php', base_path('server.php'));
     }
 
     /**
