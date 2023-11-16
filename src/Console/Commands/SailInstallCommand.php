@@ -37,10 +37,9 @@ class SailInstallCommand extends Command
 
         $this->buildDockerCompose($services);
         $this->replaceEnvVariables($services);
+        $this->buildStubs();
 
         $this->info('Sail scaffolding installed successfully.');
-
-        copy(__DIR__ . '/../../../stubs/server.php', base_path('server.php'));
     }
 
     /**
@@ -137,5 +136,15 @@ class SailInstallCommand extends Command
         }
 
         file_put_contents($this->laravel->basePath('.env'), $environment);
+    }
+
+    /**
+     * Build stubs files.
+     *
+     * @return void
+     */
+    protected function buildStubs()
+    {
+        copy(__DIR__ . '/../../../stubs/server.php', base_path('server.php'));
     }
 }
